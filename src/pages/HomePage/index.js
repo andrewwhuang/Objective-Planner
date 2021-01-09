@@ -8,7 +8,9 @@ import * as ROUTES from '../../constants/routes';
 const HomePage = () => (
   <div>
     <h1>SignIn</h1>
-    <SignInForm />
+    <FirebaseContext.Consumer>
+      {firebase => <SignInForm firebase={firebase} />}
+    </FirebaseContext.Consumer>
     <SignUpLink />
   </div>
 );
@@ -27,8 +29,15 @@ class SignInForm extends Component {
 
   onSubmit = event => {
     const { email, password } = this.state;
-    
- 
+    this.props.firebase.signUserIn(email, password)
+    .then(() => {
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push(ROUTES.HOME);
+    })
+    .catch(error => {
+        this.setState({ error });
+    });
+
     event.preventDefault();
   }
 
