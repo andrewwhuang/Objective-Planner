@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './pages/App/App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BudgetProvider } from './store';
+import { BudgetProvider } from './components/store';
 
 ReactDOM.render(
   <React.StrictMode>

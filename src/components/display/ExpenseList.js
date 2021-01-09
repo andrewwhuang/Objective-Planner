@@ -26,8 +26,8 @@ class ExpenseList extends Component {
                                 })
                             ) : (
                                 <tr>
-                                   <td>No Listed Expense Yet</td> 
-                                </tr> 
+                                   <td>No Listed Expense Yet</td>
+                                </tr>
                             )
                             return <tbody>{expensesList}</tbody>
                         }}

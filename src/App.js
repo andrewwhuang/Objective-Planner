@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React, { Component } from 'react';
-import Navbar from './navbar';
-import Budget from './budget/Budget';
+import Navbar from './components/navbar';
+import Budget from './components/budget/Budget';
 import './App.css';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      
+
       <Navbar />
       <div className ="container my-5" >
         <Budget />
