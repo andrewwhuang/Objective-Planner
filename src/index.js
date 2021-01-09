@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BudgetProvider } from './components/store';
+import Firebase, { FirebaseContext } from './components/Firebase';
 
 ReactDOM.render(
+    <FirebaseContext.Provider value={new Firebase()}>
   <React.StrictMode>
     <BudgetProvider>
       <App />
     </BudgetProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
+    </FirebaseContext.Provider>,
   document.getElementById('root')
 );
 
