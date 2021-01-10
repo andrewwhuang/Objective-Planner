@@ -37,6 +37,43 @@ const BalanceDisplay = () => {
                                     <h5 className="text-center card-title">{value.budget - totalExpense}</h5>
                                 </div>
                             </div>
+                            
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-4">
+                                <div className="card">
+                                    <div className="card-header">Goal</div>
+                                    <div className="card-body">
+                                        <h5 className="text-center card-title">{value.goal}</h5>
+                                    </div>
+                                </div>   
+                            </div>
+                            <div className="col-lg-4">
+                                <div className="card">
+                                    <div className="card-header">Interest</div>
+                                    <div className="card-body">
+                                        <h5 className="text-center card-title">{value.interestRate}</h5>
+                                    </div>
+                                </div>   
+                            </div>
+                            <div className="col-lg-4">
+                                <div className="card">
+                                    <div className="card-header">Time</div>
+                                    <div className="card-body">
+                                        <h5 className="text-center card-title">{value.time}</h5>
+                                    </div>
+                                </div>   
+                            </div>
+                            <div className="row">
+                            <div className="col-lg-12">
+                                <div className="card">
+                                    <div className="card-header">Annuity</div>
+                                    <div className="card-body">
+                                        <h5 className="text-center card-title">{(value.goal /Math.pow((1 + (value.interestRate / 100)/12), value.time)* ((value.interestRate/100) / 12) / (1-Math.pow((1+(value.interestRate/100)/12), (- value.time))))}</h5>
+                                    </div>
+                                </div>   
+                            </div>
+                            </div>
                         </div>
                     </div>
                 )

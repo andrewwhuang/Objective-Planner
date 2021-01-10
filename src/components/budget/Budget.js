@@ -4,6 +4,9 @@ import InputExpense from './InputExpense';
 import DisplayBudget from '../display/DisplayBudget';
 import { compose } from 'recompose';
 import { withFirebase } from '../../components/Firebase/context';
+import InputGoal from './inputGoal'
+import InputInterestRate from './InputInterestRate';
+import InputTime from './InputTime';
 
 const Budget = () => {
     return (
@@ -11,10 +14,12 @@ const Budget = () => {
             <div className ="col-lg-4">
                 <InputBudgetFB />
                 <InputExpense />
-
+                <InputGoal />
+                <InputInterestRate />
+                <InputTime />
+            
             </div>
             <div className="col-lg-8">
-
                 <DisplayBudget />
             </div>
 
