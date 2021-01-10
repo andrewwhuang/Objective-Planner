@@ -11,7 +11,7 @@ const Budget = () => {
     return (
         <div className="row" style = {{paddingTop: '10px', paddingBottom: '10px'}}>
             <div className ="col-lg-4" >
-                <InputBudgetFB />
+                <InputBudget />
                 <div style = {{paddingBottom: '10px'}}></div>
                 <InputExpense />
                 <div style = {{paddingBottom: '10px'}}></div>
