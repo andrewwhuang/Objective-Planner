@@ -54,6 +54,7 @@ class SignInFormBase extends Component {
             type="text"
             placeholder="Email Address"
           />
+          <br />
           <input
             name="password"
             value={this.state.password}
@@ -61,10 +62,11 @@ class SignInFormBase extends Component {
             type="password"
             placeholder="Password"
           />
+          <br />
           <button disabled={(this.state.email === '' || this.state.password === '')} type="submit">
             Sign In
           </button>
-
+          
           {this.state.error && <p>{this.state.error.message}</p>}
         </form>
       );

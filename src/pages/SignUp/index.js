@@ -43,6 +43,7 @@ class SignUpFormBase extends Component {
 
   render() {
     return (
+      <div>
       <form onSubmit={this.onSubmit}>
         <input
           name="email"
@@ -51,6 +52,7 @@ class SignUpFormBase extends Component {
           type="text"
           placeholder="Email Address"
         />
+        <br />
         <input
           name="passwordOne"
           value={this.state.passwordOne}
@@ -58,6 +60,7 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Password"
         />
+        <br />
         <input
           name="passwordTwo"
           value={this.state.passwordTwo}
@@ -65,11 +68,13 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Confirm Password"
         />
+        <br />
         <button disabled={this.state.passwordOne !== this.state.passwordTwo || this.state.email === '' || this.state.passwordOne === '' || this.state.passwordTwo === ''} type="submit">
           Sign Up</button>
  
         {this.state.error && <p>{this.state.error.message}</p>}
       </form>
+      </div>
     );
   }
 }
