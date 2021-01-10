@@ -18,7 +18,6 @@ class Firebase {
 
     this.auth = app.auth();
     this.db = app.database();
-    this.dt = {};
   }
 
   createUser = (email, password) =>
@@ -48,10 +47,9 @@ class Firebase {
   readDb = (uid) => {
     var data = this.db.ref(`data/${uid}`).once('value')
       .then((snapshot) => {
-        this.dt = snapshot.val().budget;
-        return snapshot.val().budget;
+        return snapshot.val();
     });
-    return this.dt;
+    return data;
   }
 }
 
