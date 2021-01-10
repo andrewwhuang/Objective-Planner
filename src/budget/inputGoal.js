@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { BudgetConsumer } from  '../store';
 
-class InputBudget extends Component {
+class InputGoal extends Component {
 
     state = {
-        budget: ''
+        goal: ''
     }
 
     handleInput = (e) => {
-        this.setState({budget: e.target.value})
+        this.setState({goal: e.target.value})
     }
 
     handleSubmit = (dispatch, e) => {
         e.preventDefault()
         dispatch({
-            type: "ADD_BUDGET",
-            budget: this.state.budget  
+            type: "ADD_GOAL",
+            goal: this.state.goal
         })
     }
 
@@ -26,11 +26,11 @@ class InputBudget extends Component {
                     const { dispatch } = value
                     return (
                     <div className="card card-body mb-3">
-                    <label>Your Budget</label>
+                    <label>Goal Amount</label>
                     <form className="form-inline">
                         <input
                             onChange={this.handleInput}
-                            value={this.state.budget}
+                            value={this.state.goal}
                             className="form-control mr-2"
                             type="number"
                         />
@@ -46,4 +46,4 @@ class InputBudget extends Component {
     }
 }
 
-export default InputBudget
+export default InputGoal
