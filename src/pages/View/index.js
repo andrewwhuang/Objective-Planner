@@ -4,7 +4,6 @@ import { ProgressBar } from "react-bootstrap";
 import 'react-data-grid/dist/react-data-grid.css';
 
 const ProgressBarFormatter = (value) => {
-    console.log(value.row.progress);
     return <ProgressBar now={value.row.progress} label={`${value.row.progress}%`} />;
 };
 class ViewPage extends Component {
