@@ -12,7 +12,7 @@ const SaveButton = ({ firebase }) => (
         interestRate: value.interestRate,
         time: value.time
       }
-      const uid = firebase.getCurrentUid()
+      const uid = firebase.getCurrentUid();
       return(
         <button type="button" onClick={firebase.writeToDb(uid, data)} className="btn btn-dark" style = {{float: 'center', width: '100px', margin: '5px'}}>
           Save

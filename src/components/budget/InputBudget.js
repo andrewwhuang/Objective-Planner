@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BudgetConsumer } from  '../store';
-import { withFirebase } from '../Firebase/context'
 
 const INITIAL_STATE = {
     budget: ''
@@ -23,9 +22,6 @@ class InputBudget extends Component {
             type: "ADD_BUDGET",
             budget: this.state.budget
         })
-        console.log("state" + this.state.budget);
-        this.props.firebase.writeToDb(this.props.firebase.getCurrentUid(), {number: this.state.budget});
-        this.props.firebase.readDb(this.props.firebase.getCurrentUid());
     }
 
     render() {
@@ -55,4 +51,4 @@ class InputBudget extends Component {
     }
 }
 
-export default withFirebase(InputBudget)
+export default InputBudget;

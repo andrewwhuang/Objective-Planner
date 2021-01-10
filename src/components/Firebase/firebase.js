@@ -18,6 +18,7 @@ class Firebase {
 
     this.auth = app.auth();
     this.db = app.database();
+    this.dt = {};
   }
 
   createUser = (email, password) =>
@@ -41,15 +42,16 @@ class Firebase {
   }
 
   writeToDb = (uid, data) => {
-    console.log(data);
     this.db.ref(`data/${uid}`).set(data);
   }
 
   readDb = (uid) => {
-    this.db.ref(`data/${uid}`).once('value').then((snapshot) => {
-      var number = (snapshot.val() && snapshot.val().number);
-      console.log(number);
+    var data = this.db.ref(`data/${uid}`).once('value')
+      .then((snapshot) => {
+        this.dt = snapshot.val().budget;
+        return snapshot.val().budget;
     });
+    return this.dt;
   }
 }
 

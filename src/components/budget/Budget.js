@@ -25,4 +25,4 @@ const Budget = () => {
     )
 }
 
-export default Budget
+export default Budget;
