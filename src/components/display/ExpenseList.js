@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import { BudgetConsumer } from '../store';
 
 class ExpenseList extends Component {
