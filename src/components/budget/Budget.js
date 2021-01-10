@@ -7,6 +7,8 @@ import { withFirebase } from '../../components/Firebase/context';
 import InputGoal from './inputGoal'
 import InputInterestRate from './InputInterestRate';
 import InputTime from './InputTime';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
 const Budget = () => {
     return (
@@ -22,6 +24,11 @@ const Budget = () => {
             <div className="col-lg-8">
                 <DisplayBudget />
             </div>
+            <Link to={ROUTES.LANDING}>
+                <button>
+                    Back
+                </button>
+            </Link>
 
         </div>
 
