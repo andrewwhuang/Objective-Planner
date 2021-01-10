@@ -16,17 +16,18 @@ const Navigation = () => (
 );
  
 const NavigationAuth = () => (
-    <ul>
+    <div className ="navbar-light bg-dark" style = {{paddingRight: '15px'}}>
+        <h2 className="text-white" style = {{textAlign: 'center'}}>Budget Tracker</h2>
         <SignOutButton />
-    </ul>
+    </div>
 );
 
 const NavigationNonAuth = () => (
-    <ul>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-        <br />
-        <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-    </ul>
+    <div className ="navbar-light bg-dark" style = {{paddingRight: '15px'}}>
+        <h2 className="text-white" style = {{textAlign: 'center'}}>Budget Tracker</h2>
+        <Link to={ROUTES.SIGN_IN}><button className="btn btn-dark" style = {{float: 'right', width: '100px', margin:'5px'}}>Sign In</button></Link>
+        <Link to={ROUTES.SIGN_UP}><button className="btn btn-dark" style = {{float: 'right', width: '100px', margin: '5px'}}>Sign Up</button></Link>
+    </div>
 );
  
 export default Navigation;

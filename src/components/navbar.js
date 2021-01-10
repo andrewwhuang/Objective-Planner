@@ -8,7 +8,6 @@ class Navbar extends Component {
                     <h2 className="text-white">Budget Tracker</h2>
 
                 </div>
-
             </div>
         )
     }
