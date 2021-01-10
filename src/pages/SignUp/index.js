@@ -46,34 +46,33 @@ class SignUpForm extends Component {
   };
 
   render() {
-    const {email, passwordOne, passwordTwo, error} = this.state;
-    const IsInvalid = passwordOne !== passwordTwo || email === '' || passwordOne === '' || passwordTwo === '';
     return (
       <form onSubmit={this.onSubmit}>
         <input
           name="email"
-          value={email}
+          value={this.state.email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
         <input
           name="passwordOne"
-          value={passwordOne}
+          value={this.state.passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
         <input
           name="passwordTwo"
-          value={passwordTwo}
+          value={this.state.passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={IsInvalid} type="submit">Sign Up</button>
+        <button disabled={passwordOne !== passwordTwo || email === '' || passwordOne === '' || passwordTwo === ''} type="submit">
+          Sign Up</button>
  
-        {error && <p>{error.message}</p>}
+        {this.state.error && <p>{this.state.error.message}</p>}
       </form>
     );
   }
