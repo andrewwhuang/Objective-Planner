@@ -23,6 +23,7 @@ class InputBudget extends Component {
             budget: this.state.budget
         })
         this.props.firebase.writeToDb(this.props.firebase.getCurrentUid(), {number: 24});
+        this.props.firebase.readDb(this.props.firebase.getCurrentUid());
     }
 
     render() {
