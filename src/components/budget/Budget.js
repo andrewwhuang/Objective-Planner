@@ -2,17 +2,19 @@ import React from 'react';
 import InputBudget from './InputBudget';
 import InputExpense from './InputExpense';
 import DisplayBudget from '../display/DisplayBudget';
+import { compose } from 'recompose';
+import { withFirebase } from '../../components/Firebase/context';
 
 const Budget = () => {
     return (
         <div className="row">
             <div className ="col-lg-4">
-                <InputBudget />
+                <InputBudgetFB />
                 <InputExpense />
-            
+
             </div>
             <div className="col-lg-8">
-           
+
                 <DisplayBudget />
             </div>
 
@@ -20,5 +22,10 @@ const Budget = () => {
 
     )
 }
+
+const InputBudgetFB = compose(
+    withFirebase
+  )(InputBudget);
+
 
 export default Budget

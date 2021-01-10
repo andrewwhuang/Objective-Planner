@@ -32,7 +32,6 @@ class SignInFormBase extends Component {
     .then(() => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
-        console.log("logged in");
     })
     .catch(error => {
         this.setState({ error });
@@ -65,7 +64,7 @@ class SignInFormBase extends Component {
           <button disabled={(this.state.email === '' || this.state.password === '')} type="submit">
             Sign In
           </button>
-   
+
           {this.state.error && <p>{this.state.error.message}</p>}
         </form>
       );
@@ -78,5 +77,5 @@ const SignInForm = compose(
 )(SignInFormBase);
 
 export default SignInPage;
-   
+
 export { SignInForm };

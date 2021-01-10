@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 
 
 const config = {
@@ -14,20 +15,34 @@ const config = {
 class Firebase {
   constructor() {
     app.initializeApp(config);
+
     this.auth = app.auth();
+    this.db = app.database();
   }
 
   createUser = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);
-  
-  signUserIn = (email, password) => 
+
+  signUserIn = (email, password) =>
     this.auth.signInWithEmailAndPassword(email, password);
-  
-  signOut = () => 
+
+  signOut = () =>
     this.auth.signOut();
 
-  resetPassword = (email) => 
+  resetPassword = (email) =>
     this.auth.sendPasswordResetEmail(email);
+
+  getCurrentUid = () => {
+    return this.auth.currentUser.uid;
+  }
+
+  userById = (uid) => {
+    this.db.ref(`users/${uid}`);
+  }
+
+  writeToDb = (uid, data) => {
+    this.db.ref(`numbers/${uid}`).set(data);
+  }
 }
 
 export default Firebase;

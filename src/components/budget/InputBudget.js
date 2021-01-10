@@ -20,13 +20,14 @@ class InputBudget extends Component {
         e.preventDefault()
         dispatch({
             type: "ADD_BUDGET",
-            budget: this.state.budget  
+            budget: this.state.budget
         })
+        this.props.firebase.writeToDb(this.props.firebase.getCurrentUid(), {number: 24});
     }
 
     render() {
         return (
-            <BudgetConsumer> 
+            <BudgetConsumer>
                 {value => {
                     const { dispatch } = value
                     return (
@@ -39,13 +40,13 @@ class InputBudget extends Component {
                             className="form-control mr-2"
                             type="number"
                         />
-                        <button onClick={this.handleSubmit.bind(this, dispatch)} className="btn btn-dark">Submit</button>    
+                        <button onClick={this.handleSubmit.bind(this, dispatch)} className="btn btn-dark">Submit</button>
                     </form>
                     </div>
                     )
                 }}
             </BudgetConsumer>
-            
+
 
         )
     }
