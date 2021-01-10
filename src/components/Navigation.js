@@ -16,7 +16,7 @@ const Navigation = () => (
 );
  
 const NavigationAuth = () => (
-    <div className ="navbar-light bg-dark" style = {{paddingRight: '15px'}}>
+    <div className ="navbar-light bg-dark" style = {{paddingRight: '10px', paddingBottom: '1px'}}>
         <h2 className="text-white" style = {{textAlign: 'center'}}>Budget Tracker</h2>
         <SignOutButton />
     </div>
