@@ -42,7 +42,7 @@ class InputExpense extends Component {
                 {value => {
                     const { dispatch } = value
                     return (
-                        <div className="card card-body">
+                        <div className="card card-body mb3" style = {{paddingTop: '10px', paddingBottom: '10px'}}>
                         <form onSubmit={this.handleSubmit.bind(this, dispatch)}>
                             <label>Expenses</label>
                             <input 

@@ -25,7 +25,7 @@ class InputTime extends Component {
                 {value => {
                     const { dispatch } = value
                     return (
-                    <div className="card card-body mb-3">
+                    <div className="card card-body mb3" style = {{paddingTop: '10px', paddingBottom: '10px'}}>
                     <label>Time</label>
                     <form className="form-inline">
                         <input

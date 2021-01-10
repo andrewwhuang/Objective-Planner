@@ -12,12 +12,16 @@ import * as ROUTES from '../../constants/routes';
 
 const Budget = () => {
     return (
-        <div className="row">
-            <div className ="col-lg-4">
+        <div className="row" style = {{paddingTop: '10px', paddingBottom: '10px'}}>
+            <div className ="col-lg-4" >
                 <InputBudgetFB />
+                <div style = {{paddingBottom: '10px'}}></div>
                 <InputExpense />
+                <div style = {{paddingBottom: '10px'}}></div>
                 <InputGoal />
+                <div style = {{paddingBottom: '10px'}}></div>
                 <InputInterestRate />
+                <div style = {{paddingBottom: '10px'}}></div>
                 <InputTime />
 
             </div>
