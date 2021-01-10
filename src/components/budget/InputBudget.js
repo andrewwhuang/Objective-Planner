@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { BudgetConsumer } from  '../store';
 
+const INITIAL_STATE = {
+    budget: ''
+}
+
 class InputBudget extends Component {
 
-    state = {
-        budget: ''
-    }
+    constructor(props) {
+        super(props);
+        this.state = {...INITIAL_STATE};
+      }
 
     handleInput = (e) => {
         this.setState({budget: e.target.value})

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { BudgetConsumer} from '../store';
 
-
+const INITIAL_STATE = {
+    expenses: '',
+    expenseTitle: '',
+    amount: ''
+}
 class InputExpense extends Component {
-    state = {
-        expenses: [],
-        expenseTitle: '',
-        amount: ''
+    constructor(props) {
+        super(props);
+        this.state = {...INITIAL_STATE};
     }
 
     handleInput = (e) => {

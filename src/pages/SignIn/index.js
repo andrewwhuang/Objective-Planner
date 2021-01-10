@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import FirebaseContext from '../../components/Firebase/context';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
+import { withFirebase } from '../../components/Firebase/context';
 import { SignUpLink } from '../SignUp/index';
 
 import * as ROUTES from '../../constants/routes';
 
-const HomePage = () => (
+const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
-    <FirebaseContext.Consumer>
-      {firebase => <SignInForm firebase={firebase} />}
-    </FirebaseContext.Consumer>
+    <h1>Sign In</h1>
+    <SignInForm />
     <SignUpLink />
   </div>
 );
@@ -21,7 +20,7 @@ const INITIAL_STATE = {
     error: null,
 };
 
-class SignInForm extends Component {
+class SignInFormBase extends Component {
   constructor(props) {
     super(props);
     this.state = {...INITIAL_STATE};
@@ -33,6 +32,7 @@ class SignInForm extends Component {
     .then(() => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
+        console.log("logged in");
     })
     .catch(error => {
         this.setState({ error });
@@ -62,7 +62,7 @@ class SignInForm extends Component {
             type="password"
             placeholder="Password"
           />
-          <button disabled={(email === '' || password === '')} type="submit">
+          <button disabled={(this.state.email === '' || this.state.password === '')} type="submit">
             Sign In
           </button>
    
@@ -72,6 +72,11 @@ class SignInForm extends Component {
   }
 }
 
-export default HomePage;
+const SignInForm = compose(
+  withRouter,
+  withFirebase,
+)(SignInFormBase);
+
+export default SignInPage;
    
 export { SignInForm };

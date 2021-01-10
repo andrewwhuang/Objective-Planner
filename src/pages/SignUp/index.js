@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import FirebaseContext from '../../components/Firebase/context';
+import { Link, withRouter} from 'react-router-dom';
+import { compose } from 'recompose';
+import { withFirebase } from '../../components/Firebase/context';
 import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
-    <FirebaseContext.Consumer>
-      {firebase => <SignUpForm firebase={firebase} />}
-    </FirebaseContext.Consumer>
+    <h1>Sign Up</h1>
+    <SignUpForm />
   </div>
 );
 
@@ -19,29 +18,26 @@ const INITIAL_STATE = {
   error: null,
 };
 
-class SignUpForm extends Component {
+class SignUpFormBase extends Component {
   constructor(props) {
     super(props);
     this.state = {...INITIAL_STATE};
   }
 
-  onSubmit = event => {
-    const { email, passwordOne, error } = this.state;
- 
-    this.props.firebase
-      .createUser(email, passwordOne)
-      .then(authUser => {
+  onSubmit = (event) => {
+    const { email, passwordOne } = this.state;
+    this.props.firebase.createUser(email, passwordOne)
+      .then((authUser) => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({ error });
       });
- 
     event.preventDefault();
   }
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState(this.setState({ [event.target.name]: event.target.value }));
   };
 
@@ -69,7 +65,7 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={passwordOne !== passwordTwo || email === '' || passwordOne === '' || passwordTwo === ''} type="submit">
+        <button disabled={this.state.passwordOne !== this.state.passwordTwo || this.state.email === '' || this.state.passwordOne === '' || this.state.passwordTwo === ''} type="submit">
           Sign Up</button>
  
         {this.state.error && <p>{this.state.error.message}</p>}
@@ -83,6 +79,11 @@ const SignUpLink = () => (
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );
+
+const SignUpForm = compose(
+  withRouter,
+  withFirebase,
+)(SignUpFormBase);
 
 export default SignUpPage;
 
