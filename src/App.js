@@ -6,6 +6,7 @@ import SignInPage from './pages/SignIn/index';
 import SignUpPage from './pages/SignUp/index';
 import Navigation from './components/Navigation';
 import LandingPage from './pages/LandingPage/index';
+import ViewPage from './pages/View/index';
 import withAuth from './components/Session/withAuth';
 import * as ROUTES from './constants/routes';
 import './App.css';
@@ -18,6 +19,7 @@ const App = () => (
           <Route path={ROUTES.SIGN_IN} component={SignInPage} />
           <Route path={ROUTES.ADD} component={Budget} />
           <Route path={ROUTES.LANDING} component = {LandingPage} />
+          <Route path={ROUTES.VIEW} component = {ViewPage} />
         </div>
       </Router>
 );
