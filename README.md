@@ -1,4 +1,4 @@
-# Welcome to Object Oriented Planner
+# Welcome to planSmart
 
 This app was created by Andrew Huang, Daniel Kim, Matthew Yen and Stella Wang for nwHacks 2021.
 
