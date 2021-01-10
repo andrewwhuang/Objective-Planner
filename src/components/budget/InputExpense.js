@@ -24,7 +24,7 @@ class InputExpense extends Component {
             type: "ADD_EXPENSES",
             expenses: this.state.expenses
         })
-    } 
+    }
 
     addExpenses = () => {
         this.setState({
@@ -44,14 +44,14 @@ class InputExpense extends Component {
                     return (
                         <div className="card card-body mb3" style = {{paddingTop: '10px', paddingBottom: '10px'}}>
                         <form onSubmit={this.handleSubmit.bind(this, dispatch)}>
-                            <label>Expenses</label>
-                            <input 
+                            <label>Goal title</label>
+                            <input
                                 onChange={this.handleInput}
                                 value={this.state.expenseTitle}
                                 className="form-control"
                                 name="expenseTitle"
                             />
-                            <label>Amount</label>
+                            <label>Goal amount</label>
                             <input
                                 onChange={this.handleInput}
                                 value={this.state.amount}
@@ -60,8 +60,8 @@ class InputExpense extends Component {
                             />
                             <button onClick={this.addExpenses}className="btn btn-dark btn-block mt-3">Submit</button>
                         </form>
-        
-        
+
+
                     </div>
                     )
                 }}

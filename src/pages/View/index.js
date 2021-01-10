@@ -21,8 +21,8 @@ class ViewPage extends Component {
           ],
         rows: [
             { goal: 'house', saved: '0', annuity: '3600', progress: 0 },
-            { goal: 'dog', saved: '0', annuity: '420', progress: 50 },
-            { goal: 'pc', saved: '0', annuity: '3600', progress: 90 },
+            { goal: 'dog', saved: '200', annuity: '400', progress: 50 },
+            { goal: 'car', saved: '3000', annuity: '3600', progress: 90 },
         ],
         dt: this.props.firebase.readDb(this.props.firebase.getCurrentUid())
       }

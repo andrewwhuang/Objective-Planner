@@ -21,12 +21,12 @@ class InputTime extends Component {
 
     render() {
         return (
-            <BudgetConsumer> 
+            <BudgetConsumer>
                 {value => {
                     const { dispatch } = value
                     return (
                     <div className="card card-body mb3" style = {{paddingTop: '10px', paddingBottom: '10px'}}>
-                    <label>Time</label>
+                    <label>Time (months) </label>
                     <form className="form-inline">
                         <input
                             onChange={this.handleInput}
@@ -34,13 +34,13 @@ class InputTime extends Component {
                             className="form-control mr-2"
                             type="number"
                         />
-                        <button onClick={this.handleSubmit.bind(this, dispatch)} className="btn btn-dark">Submit</button>    
+                        <button onClick={this.handleSubmit.bind(this, dispatch)} className="btn btn-dark">Submit</button>
                     </form>
                     </div>
                     )
                 }}
             </BudgetConsumer>
-            
+
 
         )
     }
