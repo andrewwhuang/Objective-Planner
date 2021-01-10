@@ -8,15 +8,21 @@ class LandingPage extends Component {
         return(
             <div>
                 <Link to={ROUTES.VIEW}>
-                    <button>
-                        View Page
+                    <button className = "btn btn-dark" style = {{margin: '10px', position: 'absolute', top: '35%', left: '20%', width: '300px'}}>
+                        <h2>View Your Goals</h2>
                     </button>
                 </Link>
+                <h4 style = {{margin: '10px', position: 'absolute', top: '45%', left: '20%', width: '300px', textAlign:'center'}}>
+                    Click here to view all items added to your budget planner
+                </h4>
                 <Link to={ROUTES.ADD}>
-                    <button>
-                        Add Page
+                    <button className = "btn btn-dark" style = {{margin: '10px', position: 'absolute', top: '35%', right: '20%', width: '300px'}}>
+                        <h2>Add a Goal</h2>
                     </button>
                 </Link>
+                <h4 style = {{margin: '10px', position: 'absolute', top: '45%', right: '20%', width: '300px', textAlign:'center'}}>
+                    Click here to add an item into your budget planner
+                </h4>
             </div>
         );
     }
