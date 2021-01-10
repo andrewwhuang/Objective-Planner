@@ -10,7 +10,7 @@ class InputBudget extends Component {
     constructor(props) {
         super(props);
         this.state = {...INITIAL_STATE};
-      }
+    }
 
     handleInput = (e) => {
         this.setState({budget: e.target.value})
