@@ -41,7 +41,7 @@ class Firebase {
   }
 
   writeToDb = (uid, data) => {
-    this.db.ref(`numbers/${uid}`).set(data);
+    this.db.ref(`data/${uid}`).set(data);
   }
 
   readDb = (uid) => {

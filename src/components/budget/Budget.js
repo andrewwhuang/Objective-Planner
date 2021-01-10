@@ -19,16 +19,11 @@ const Budget = () => {
                 <InputGoal />
                 <InputInterestRate />
                 <InputTime />
-            
+
             </div>
             <div className="col-lg-8">
                 <DisplayBudget />
             </div>
-            <Link to={ROUTES.LANDING}>
-                <button>
-                    Back
-                </button>
-            </Link>
 
         </div>
 

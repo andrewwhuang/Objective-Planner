@@ -8,9 +8,9 @@ class LandingPage extends Component {
         return(
             <div>
                 <Link to={ROUTES.VIEW}>
-                <button>
-                    View Page
-                </button>
+                    <button>
+                        View Page
+                    </button>
                 </Link>
                 <Link to={ROUTES.ADD}>
                     <button>
