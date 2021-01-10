@@ -4,22 +4,22 @@ const BudgetContext = React.createContext();
 
 const reducer = (state, action) => {
     switch(action.type) {
-        case "ADD_BUDGET": 
+        case "ADD_BUDGET":
         return {
             ...state,
             budget: action.budget
         };
-        case "ADD_GOAL": 
+        case "ADD_GOAL":
         return {
             ...state,
             goal: action.goal
         };
-        case "ADD_INTEREST": 
+        case "ADD_INTEREST":
         return {
             ...state,
             interestRate: action.interestRate
         };
-        case "ADD_TIME": 
+        case "ADD_TIME":
         return {
             ...state,
             time: action.time
@@ -32,7 +32,6 @@ const reducer = (state, action) => {
         default:
         return state
     }
-
 }
 
 class BudgetProvider extends Component {
@@ -45,7 +44,6 @@ class BudgetProvider extends Component {
         annuity: '',
 
         dispatch: action => this.setState(state => reducer(state, action))
-
     }
     render() {
         return(

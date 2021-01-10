@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.6.0",
     "firebase": "^8.2.2",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.3",
+    "react-data-grid": "^7.0.0-canary.33",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
