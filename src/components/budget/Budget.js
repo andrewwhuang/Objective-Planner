@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import InputBudget from './InputBudget';
 import InputExpense from './InputExpense';
 import DisplayBudget from '../display/DisplayBudget';

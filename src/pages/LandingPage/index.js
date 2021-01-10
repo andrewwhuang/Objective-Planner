@@ -16,7 +16,6 @@ class LandingPage extends Component {
                     <button>
                         Add Page
                     </button>
-
                 </Link>
             </div>
         );
