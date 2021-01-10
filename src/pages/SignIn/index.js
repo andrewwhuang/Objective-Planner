@@ -31,7 +31,7 @@ class SignInFormBase extends Component {
     this.props.firebase.signUserIn(email, password)
     .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.LANDING);
     })
     .catch(error => {
         this.setState({ error });
@@ -66,7 +66,7 @@ class SignInFormBase extends Component {
           <button disabled={(this.state.email === '' || this.state.password === '')} type="submit">
             Sign In
           </button>
-          
+
           {this.state.error && <p>{this.state.error.message}</p>}
         </form>
       );
