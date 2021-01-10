@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { FirebaseContext } from '../../components/Firebase/context';
+import FirebaseContext from '../../components/Firebase/context';
 import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => (
@@ -26,7 +26,7 @@ class SignUpForm extends Component {
   }
 
   onSubmit = event => {
-    const { email, passwordOne } = this.state;
+    const { email, passwordOne, error } = this.state;
  
     this.props.firebase
       .createUser(email, passwordOne)
@@ -46,7 +46,7 @@ class SignUpForm extends Component {
   };
 
   render() {
-    const {email, passwordOne, passwordTwo} = this.state;
+    const {email, passwordOne, passwordTwo, error} = this.state;
     const IsInvalid = passwordOne !== passwordTwo || email === '' || passwordOne === '' || passwordTwo === '';
     return (
       <form onSubmit={this.onSubmit}>

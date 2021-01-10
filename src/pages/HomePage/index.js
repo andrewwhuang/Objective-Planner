@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Firebase } from '../../componenets/Firebase/firebase';
+import FirebaseContext from '../../components/Firebase/context';
 import { SignUpLink } from '../SignUp/index';
 
 import * as ROUTES from '../../constants/routes';
