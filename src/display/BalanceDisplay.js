@@ -64,6 +64,16 @@ const BalanceDisplay = () => {
                                     </div>
                                 </div>   
                             </div>
+                            <div className="row">
+                            <div className="col-lg-12">
+                                <div className="card">
+                                    <div className="card-header">Annuity</div>
+                                    <div className="card-body">
+                                        <h5 className="text-center card-title">{(value.goal /Math.pow((1 + (value.interestRate / 100)/12), value.time)* ((value.interestRate/100) / 12) / (1-Math.pow((1+(value.interestRate/100)/12), (- value.time))))}</h5>
+                                    </div>
+                                </div>   
+                            </div>
+                            </div>
                         </div>
                     </div>
                 )
