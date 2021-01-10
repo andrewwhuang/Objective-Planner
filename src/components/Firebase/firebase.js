@@ -41,12 +41,13 @@ class Firebase {
   }
 
   writeToDb = (uid, data) => {
+    console.log(data);
     this.db.ref(`data/${uid}`).set(data);
   }
 
   readDb = (uid) => {
-    this.db.ref(`numbers/${uid}`).once('value').then((snapshot) => {
-      var number = (snapshot.val() && snapshot.val().number) || 'Anonymous' ;
+    this.db.ref(`data/${uid}`).once('value').then((snapshot) => {
+      var number = (snapshot.val() && snapshot.val().number);
       console.log(number);
     });
   }
